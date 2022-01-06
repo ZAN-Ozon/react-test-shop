@@ -1,17 +1,21 @@
-function Drawer(){
-    return (
-        <div style={{display:'none'}} className="overlay">
+function Drawer({onClose, items = []}){
+    
+    return ( 
+        <div className="overlay">
             <div className="drawer">
-                <h2>Корзина<img className="removeBtn" wight={18} height={18} src="/img/remove.png" alt="Remove"/></h2>
+                <h2>Корзина<img onClick={onClose} className="removeBtn" wight={18} height={18} src="/img/remove.png" alt="Remove"/></h2>
                 <div className="itemsCart">
-                    <div className="cartItem">
-                        <img wight={70} height={70} src="/img/columbia/1.png" alt="columbia" />
-                            <div>
-                            <p>Men's Glennaker Lake™ Rain Jacket</p>
-                            <b>12 900 грн.</b>
-                            </div> 
-                        <img className="removeBtn" wight={18} height={18} src="/img/remove.png" alt="Remove"/>
-                    </div>
+                  {items.map((obj) => (
+                      
+                      <div className="cartItem">
+                      <img wight={70} height={70} src={obj.imageUrl} alt="columbia" />
+                          <div>
+                          <p>{obj.title}</p>
+                          <b>{obj.price} грн.</b>
+                          </div> 
+                      <img className="removeBtn" wight={18} height={18} src="/img/remove.png" alt="Remove"/>
+                  </div>   
+                  ))} 
                 </div>
                 <div className="cartTotal">
                     <ul>

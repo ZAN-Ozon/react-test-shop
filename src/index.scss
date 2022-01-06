@@ -182,6 +182,7 @@ header {
   .li-mr {
     margin-right: 30px;
     justify-content: space-between;
+    cursor: pointer;
   }
 }
 .content {
@@ -209,6 +210,7 @@ header {
   }
   .itemsCard {
     display: flex;
+    flex-wrap: wrap;
     
   }
 }
