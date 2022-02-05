@@ -157,6 +157,10 @@ body {
           font-weight: 500;
           cursor: pointer;
           transition: background 0.1s ease-in-out;
+          &:disabled{
+            background-color: #bebebe;
+            cursor: default;
+          }
           &:hover {
             background: lighten(#9dd558, 5%);
           }
@@ -164,6 +168,7 @@ body {
             background: darken(#9dd558, 5%);
           }
           position: relative;
+          
           &:hover {
             img {
             transform: translateX(5px);
